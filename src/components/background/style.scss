@@ -1,0 +1,150 @@
+@use "sass:math";
+@import '../../styles/index';
+
+
+$baseClass: 'bg';
+
+.#{$baseClass} {
+    position: fixed;
+    background-color: #1E1E1E;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+
+    &-square {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: #0E131E;
+        box-shadow: 0 10px 26px 0 rgba(0, 0, 0, 0.10), 0 -24px 39px 0 #040406;
+        backdrop-filter: blur(43px);
+        border-radius: px-to-rem(50);
+        z-index: 0;
+
+        &--1 {
+            position: absolute;
+            width: px-to-rem(260);
+            height: px-to-rem(260);
+            transform: translate(-50%, -50%) rotate(45deg);
+            top: 5%;
+            left: 65%;
+        }
+        &--2 {
+            position: absolute;
+            width: px-to-rem(340);
+            height: px-to-rem(340);
+            transform: translate(-50%, -50%) rotate(45deg);
+            top: 65%;
+            left: 65%;
+        }
+        &--3 {
+            position: absolute;
+            width: px-to-rem(340);
+            height: px-to-rem(340);
+            transform: translate(-50%, -50%) rotate(45deg);
+            top: 80%;
+            left: 15%;
+        }
+
+    }
+    &-circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: transparent;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        border-radius: 100%;
+        border: 1px solid transparent;
+        border-right-color: #144EE3;
+        opacity: 0.3;
+        animation-name: spin;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 6000ms;
+        animation-direction: normal;
+
+        &--1 {
+            width: px-to-rem(320);
+            height: px-to-rem(320);
+            animation-delay: 0ms;
+        }
+        &--2 {
+            width: px-to-rem(520);
+            height: px-to-rem(520);
+            animation-delay: 500ms;
+            animation-direction: reverse;
+        }
+        &--3 {
+            width: px-to-rem(720);
+            height: px-to-rem(720);
+            animation-delay: 1000ms;
+        }
+        &--4 {
+            width: px-to-rem(920);
+            height: px-to-rem(920);
+            animation-delay: 1500ms;
+            animation-direction: reverse;
+        }
+        &--5 {
+            width: px-to-rem(1120);
+            height: px-to-rem(1120);
+            animation-delay: 2000ms;
+        }
+        &--6 {
+            width: px-to-rem(1320);
+            height: px-to-rem(1320);
+            animation-delay: 2500ms;
+            animation-direction: reverse;
+        }
+        &--7 {
+            width: px-to-rem(1520);
+            height: px-to-rem(1520);
+            animation-delay: 3000ms;
+        }
+        &--8 {
+            width: px-to-rem(1720);
+            height: px-to-rem(1720);
+            animation-delay: 3500ms;
+            animation-direction: reverse;
+        }
+    }
+}
+
+@-ms-keyframes spin {
+    from {
+        -ms-transform: translate(-50%, -50%) rotate(0deg);
+    } to {
+          -ms-transform: translate(-50%, -50%) rotate(360deg);
+      }
+}
+@-moz-keyframes spin {
+    from {
+        -moz-transform: translate(-50%, -50%) rotate(0deg);
+    } to {
+          -moz-transform: translate(-50%, -50%) rotate(360deg);
+      }
+}
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: translate(-50%, -50%) rotate(0deg);
+    } to {
+          -webkit-transform: translate(-50%, -50%) rotate(360deg);
+      }
+}
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    } to {
+          transform: translate(-50%, -50%) rotate(360deg);
+      }
+}
+
+:export {
+    baseClass: #{$baseClass}
+}

@@ -1,0 +1,57 @@
+@use "sass:math";
+@import '../../styles/index';
+
+
+$baseClass: 'table';
+
+.#{$baseClass} {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 5px;
+
+    }
+
+    thead {
+        background-color: #181E29;
+        color: #C9CED6;
+
+        tr {}
+        th {
+            font-size: px-to-rem(16);
+            font-weight: 600;
+            border: none;
+            border-spacing: 0;
+            padding: px-to-rem(16) px-to-rem(24);
+            white-space: nowrap;
+        }
+    }
+
+    tbody {
+        color: darken(#C9CED6, 20%);
+
+        tr {
+            background: rgba(24, 30, 41, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        td {
+            font-size: px-to-rem(14);
+            font-weight: 400;
+            border-spacing: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: px-to-rem(8) px-to-rem(24);
+            border: 1px solid transparent;
+        }
+    }
+}
+
+:export {
+    baseClass: #{$baseClass}
+}

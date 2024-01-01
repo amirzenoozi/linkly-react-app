@@ -1,0 +1,13 @@
+$grid-gutter: 16px;
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 (- calc($grid-gutter / 2)) (-$grid-gutter);
+    width: 100%;
+
+    &--stretch {
+        align-items: stretch;
+    }
+}
